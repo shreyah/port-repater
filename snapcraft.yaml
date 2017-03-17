@@ -1,0 +1,24 @@
+name: port-repeater
+summary: listens port 
+description: template Go snappy project listens to port 8081 and respond with the text 
+#architecture: [amd64, armhf]
+#icon: icon.png
+version: 0.1
+confinement: devmode
+grade: stable
+
+apps: 
+  port-repeater: 
+    command: ./bin/port-repeater
+    daemon: simple
+#    plugs: [network-bind]
+    plugs:
+
+    - networking
+    - network-service
+    
+parts:
+  port-repeater:
+   plugin: go
+   source: https://github.com/shreyah/port-repater.git
+
