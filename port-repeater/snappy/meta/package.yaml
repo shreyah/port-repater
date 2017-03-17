@@ -1,0 +1,12 @@
+name: port-repeater		
+vendor: shreyah
+architecture: [amd64, armhf]
+icon: meta/go.png
+version: 0.1
+services:
+ - name: port-repeater
+   description: "template Go snappy project"
+   start: ./bin/port-repeater
+   caps:
+     - networking
+     - network-service
